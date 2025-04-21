@@ -43,9 +43,11 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // assessment
-               DropdownButtonFormField<String>(
+                DropdownButtonFormField<String>(
                   value: _selectAssessment,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Assessment",
                     hintStyle: const TextStyle(
                       fontSize: 18,
@@ -55,11 +57,11 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -91,7 +93,7 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                       }).toList(),
                   onChanged: (String? newValue) {
                     setState(() {
-                      _selectAssessment= newValue;
+                      _selectAssessment = newValue;
                     });
                   },
                 ),
@@ -100,6 +102,8 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                 DropdownButtonFormField<String>(
                   value: _selectCarePlan,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Care Plan",
                     hintStyle: const TextStyle(
                       fontSize: 18,
@@ -109,11 +113,11 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -163,17 +167,17 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                   focusNode: _titleFocusNode,
                   maxLines: 1,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Goal",
                     hintStyle: const TextStyle(color: Colors.grey),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _titleFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -192,17 +196,17 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                   focusNode: _descriptionFocusNode,
                   maxLines: 6,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Enter your description",
                     hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _descriptionFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -220,6 +224,8 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                 DropdownButtonFormField<String>(
                   value: _selectStatus,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Status",
                     hintStyle: const TextStyle(
                       fontSize: 18,
@@ -229,11 +235,11 @@ class _PlanFormScreenState extends State<PlanFormScreen> {
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),

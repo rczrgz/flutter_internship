@@ -48,15 +48,15 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
                   decoration: InputDecoration(
                     hintText: "Title",
                     hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
+                    filled: true,
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _titleFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -77,15 +77,15 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
                   decoration: InputDecoration(
                     hintText: "Enter your description",
                     hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
+                    filled: true,
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _descriptionFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -110,13 +110,15 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
                       fontFamily: 'Poppins',
                       color: Colors.black,
                     ),
+                    filled: true,
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -164,13 +166,15 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
                       color: Color(0xFF1F2937),
                       fontWeight: FontWeight.w500,
                     ),
+                    filled: true,
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -212,13 +216,23 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
                   decoration: InputDecoration(
                     hintText: 'Search ICD-11',
                     hintStyle: TextStyle(color: Color(0xFF9CA3AF)),
+                    filled: true,
+                    fillColor: Colors.white,
                     suffixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.blue, width: 2),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 2,
+                      ),
                     ),
                   ),
                   onChanged: (value) {
@@ -243,3 +257,5 @@ class _AssessmentFormScreenState extends State<AssessmentFormScreen> {
     );
   }
 }
+
+

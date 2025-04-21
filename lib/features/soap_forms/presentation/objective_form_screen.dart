@@ -29,9 +29,9 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
       case "Vital Sign":
         return _buildVitalSignSection();
       case "General Survey":
-        return  _buildGeneralSurveySection();
+        return _buildGeneralSurveySection();
       case "HEENT":
-        return  _buildHeentSection();
+        return _buildHeentSection();
       case "Other":
         return _buildOtherSection();
       default:
@@ -44,22 +44,22 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 10),
-        const Text(
-          "Vital Sign",
-          style: TextStyle(fontWeight: FontWeight.w700),
-        ),
+        const Text("Vital Sign", style: TextStyle(fontWeight: FontWeight.w700)),
         const SizedBox(height: 10),
 
         // Care Plan Dropdown
         DropdownButtonFormField<String>(
           value: _selectCarePlan,
           decoration: _inputDecoration("Care Plan"),
-          items: _care
-              .map((care) => DropdownMenuItem<String>(
-                    value: care,
-                    child: Text(care),
-                  ))
-              .toList(),
+          items:
+              _care
+                  .map(
+                    (care) => DropdownMenuItem<String>(
+                      value: care,
+                      child: Text(care),
+                    ),
+                  )
+                  .toList(),
           onChanged: (value) => setState(() => _selectCarePlan = value),
         ),
         const SizedBox(height: 20),
@@ -68,12 +68,15 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
         DropdownButtonFormField<String>(
           value: _selectStatus,
           decoration: _inputDecoration("Status"),
-          items: _status
-              .map((status) => DropdownMenuItem<String>(
-                    value: status,
-                    child: Text(status),
-                  ))
-              .toList(),
+          items:
+              _status
+                  .map(
+                    (status) => DropdownMenuItem<String>(
+                      value: status,
+                      child: Text(status),
+                    ),
+                  )
+                  .toList(),
           onChanged: (value) => setState(() => _selectStatus = value),
         ),
         const SizedBox(height: 20),
@@ -85,14 +88,15 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
           decoration: InputDecoration(
             hintText: "Goal",
             hintStyle: const TextStyle(color: Colors.grey),
+            filled: true,
+                    fillColor: Colors.white,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(
-                color: _titleFocusNode.hasFocus
-                    ? Colors.blue
-                    : const Color(0xFF9CA3AF),
-                width: 2,
-              ),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
@@ -111,32 +115,29 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 20),
-                TextField(
-                  focusNode: _descriptionFocusNode,
-                  maxLines: 6,
-                  decoration: InputDecoration(
-                    hintText: "Type here...",
-                    hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _descriptionFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                  onChanged: (value) {},
-                ),
+        TextField(
+          focusNode: _descriptionFocusNode,
+          maxLines: 6,
+          decoration: InputDecoration(
+            hintText: "Type here...",
+            hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
+            filled: true,
+                    fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
+          ),
+          onChanged: (value) {},
+        ),
       ],
     );
   }
@@ -146,100 +147,96 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 20),
-                TextField(
-                  focusNode: _descriptionFocusNode,
-                  maxLines: 6,
-                  decoration: InputDecoration(
-                    hintText: "Type here...",
-                    hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _descriptionFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                  onChanged: (value) {},
-                ),
+        TextField(
+          focusNode: _descriptionFocusNode,
+          maxLines: 6,
+          decoration: InputDecoration(
+            hintText: "Type here...",
+            hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
+            filled: true,
+                    fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
+          ),
+          onChanged: (value) {},
+        ),
       ],
     );
   }
 
   Widget _buildOtherSection() {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SizedBox(height: 10),
-                // Title TextField
-                TextField(
-                  focusNode: _titleFocusNode,
-                  maxLines: 1,
-                  decoration: InputDecoration(
-                    hintText: "Goal",
-                    hintStyle: const TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _titleFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                  onChanged: (value) {},
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 10),
+        // Title TextField
+        TextField(
+          focusNode: _titleFocusNode,
+          maxLines: 1,
+          decoration: InputDecoration(
+            hintText: "Goal",
+            hintStyle: const TextStyle(color: Colors.grey),
+            filled: true,
+                    fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
+          ),
+          onChanged: (value) {},
+        ),
 
-                const SizedBox(height: 20),
-                TextField(
-                  focusNode: _descriptionFocusNode,
-                  maxLines: 6,
-                  decoration: InputDecoration(
-                    hintText: "Type here...",
-                    hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _descriptionFocusNode.hasFocus
-                                ? Colors.blue
-                                : const Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                  onChanged: (value) {},
-                ),
-    ],);
+        const SizedBox(height: 20),
+        TextField(
+          focusNode: _descriptionFocusNode,
+          maxLines: 6,
+          decoration: InputDecoration(
+            hintText: "Type here...",
+            hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
+            filled: true,
+                    fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
+          ),
+          onChanged: (value) {},
+        ),
+      ],
+    );
   }
 
   InputDecoration _inputDecoration(String hint) {
     return InputDecoration(
       hintText: hint,
+      filled: true,
+      fillColor: Colors.white,
       hintStyle: const TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w400,
@@ -248,11 +245,11 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+        borderSide: const BorderSide(color: Colors.black12),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
+        borderSide: const BorderSide(color: Colors.black12),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -283,19 +280,21 @@ class _ObjectiveFormScreenState extends State<ObjectiveFormScreen> {
                 DropdownButtonFormField<String>(
                   value: _selectObjective,
                   decoration: _inputDecoration("Select Objective"),
-                  items: _obj
-                      .map((obj) => DropdownMenuItem<String>(
-                            value: obj,
-                            child: Text(obj),
-                          ))
-                      .toList(),
+                  items:
+                      _obj
+                          .map(
+                            (obj) => DropdownMenuItem<String>(
+                              value: obj,
+                              child: Text(obj),
+                            ),
+                          )
+                          .toList(),
                   onChanged: (value) {
                     setState(() {
                       _selectObjective = value;
                     });
                   },
                 ),
-                
 
                 // Conditional Content
                 _buildBottomSection(),

@@ -43,6 +43,8 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                   value: _selectType,
                   decoration: InputDecoration(
                     hintText: "Select",
+                    filled: true,
+                    fillColor: Colors.white,
                     hintStyle: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
@@ -50,17 +52,17 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                       color: Color(0xFF9CA3AF),
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF9CA3AF)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Colors.blue, width: 2),
-                    ),
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
                     isDense: true,
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 12,
@@ -93,25 +95,25 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                   focusNode: _focusNode, // Attach focus node
                   maxLines: 3,
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: "Enter your description",
                     hintStyle: const TextStyle(
                       color: Color(0xFF9CA3AF),
                     ),
                     // Conditional border color based on focus
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: _focusNode.hasFocus ? Colors.blue : Color(0xFF9CA3AF),
-                        width: 2,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.black12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.blue, width: 2),
+            ),
                   ),
                   onChanged: (value) {
                     // Handle text change
