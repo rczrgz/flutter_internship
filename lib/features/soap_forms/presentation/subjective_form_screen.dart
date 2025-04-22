@@ -10,7 +10,7 @@ class SubjectiveFormScreen extends StatefulWidget {
 class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
   String? _selectType;
   final List<String> _type = ["Type 1", "Type 2", "Type 3"];
-  
+
   // FocusNode for TextField to handle focus state and color change
   final FocusNode _focusNode = FocusNode();
 
@@ -52,17 +52,20 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                       color: Color(0xFF9CA3AF),
                     ),
                     border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.black12),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.black12),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.blue, width: 2),
-            ),
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 2,
+                      ),
+                    ),
                     isDense: true,
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 12,
@@ -76,12 +79,13 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                     fontFamily: 'Poppins',
                     color: Colors.black,
                   ),
-                  items: _type.map((reason) {
-                    return DropdownMenuItem<String>(
-                      value: reason,
-                      child: Text(reason),
-                    );
-                  }).toList(),
+                  items:
+                      _type.map((reason) {
+                        return DropdownMenuItem<String>(
+                          value: reason,
+                          child: Text(reason),
+                        );
+                      }).toList(),
                   onChanged: (String? newValue) {
                     setState(() {
                       _selectType = newValue;
@@ -89,7 +93,7 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                   },
                 ),
                 const SizedBox(height: 20),
-          
+
                 // TextField with FocusNode to change border color on focus
                 TextField(
                   focusNode: _focusNode, // Attach focus node
@@ -98,22 +102,23 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                     filled: true,
                     fillColor: Colors.white,
                     hintText: "Enter your description",
-                    hintStyle: const TextStyle(
-                      color: Color(0xFF9CA3AF),
-                    ),
+                    hintStyle: const TextStyle(color: Color(0xFF9CA3AF)),
                     // Conditional border color based on focus
                     border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.black12),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.black12),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Colors.blue, width: 2),
-            ),
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 2,
+                      ),
+                    ),
                   ),
                   onChanged: (value) {
                     // Handle text change

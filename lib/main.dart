@@ -34,8 +34,9 @@ class CategorizedButtonsScreen extends StatelessWidget {
               {'title': 'Plan Form', 'routeName': 'soap-plan'},
             ]),
             const SizedBox(height: 24),
-            _buildCategory(context, 'Medical', [
-              {'title': 'Medical Certificate'},
+            _buildCategory(context, 'Service', [
+              {'title': 'Select Service Request', 'routeName': 'service-request'},
+              {'title': 'Add Service Request',},
             ]),
           ],
         ),
