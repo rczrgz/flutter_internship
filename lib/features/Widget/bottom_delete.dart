@@ -20,7 +20,7 @@ class BottomBar extends StatelessWidget {
               // BoxShadow(
               //   color: Colors.black12, // Color of the shadow
               //   blurRadius: 10, // The blur intensity
-              //   offset: Offset(0, -2), // This creates the shadow effect at the top
+              //   offset: Offset(0, -1), // This creates the shadow effect at the top
               // ),
             ],
           ),
@@ -54,7 +54,7 @@ class BottomBar extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: onDelete,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: 
+                          backgroundColor:
                               Colors
                                   .red, // This sets the background color to red
                           padding: const EdgeInsets.symmetric(vertical: 16),
