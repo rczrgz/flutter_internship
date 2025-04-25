@@ -1,3 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_internship/features/soap_forms/presentation/bloc/subjective_bloc.dart';
+import 'package:flutter_internship/features/soap_forms/presentation/reusable_button.dart';
 import 'package:flutter_internship/features/soap_forms/presentation/select_service_request/assign_to_clinic.dart';
 import 'package:flutter_internship/features/soap_forms/presentation/select_service_request/assign_to_facility.dart';
 import 'package:flutter_internship/features/soap_forms/presentation/service_request_screen.dart';
@@ -19,7 +22,11 @@ final router = GoRouter(
     GoRoute(
       name: 'soap-subjective',
       path: '/soap-subjective',
-      builder: (context, state) => const SubjectiveFormScreen(),
+      builder:
+          (context, state) => BlocProvider(
+            create: (_) => SubjectiveBloc(),
+            child: const SubjectiveFormScreen(),
+          ),
     ),
     GoRoute(
       name: 'soap-objective',
@@ -50,6 +57,11 @@ final router = GoRouter(
       name: 'assign-to-clinic',
       path: '/assign-to-clinic',
       builder: (context, state) => const AssignToClinic(),
+    ),
+     GoRoute(
+      name: 'reusable-button',
+      path: '/reusable-button',
+      builder: (context, state) => const ReusableButton(),
     ),
   ],
   initialLocation: '/',

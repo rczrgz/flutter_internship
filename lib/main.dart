@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_internship/features/soap_forms/presentation/bloc/subjective_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'core/router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => SubjectiveBloc()),
+        // Add other BLoCs here if needed
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +46,7 @@ class CategorizedButtonsScreen extends StatelessWidget {
             const SizedBox(height: 24),
             _buildCategory(context, 'Service', [
               {'title': 'Select Service Request', 'routeName': 'service-request'},
-              {'title': 'Add Service Request',},
+              {'title': 'Reusable Button', 'routeName': 'reusable-button'},
             ]),
           ],
         ),

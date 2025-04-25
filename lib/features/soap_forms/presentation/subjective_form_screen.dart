@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_internship/features/soap_forms/presentation/bloc/subjective_bloc.dart';
 
 class SubjectiveFormScreen extends StatefulWidget {
   const SubjectiveFormScreen({super.key});
@@ -80,15 +82,16 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                     color: Colors.black,
                   ),
                   items:
-                      _type.map((reason) {
+                      _type.map((type) {
                         return DropdownMenuItem<String>(
-                          value: reason,
-                          child: Text(reason),
+                          value: type,
+                          child: Text(type),
                         );
                       }).toList(),
                   onChanged: (String? newValue) {
                     setState(() {
                       _selectType = newValue;
+                      context.read<SubjectiveBloc>().add(TypeChanged(newValue!));
                     });
                   },
                 ),
@@ -121,7 +124,7 @@ class _SubjectiveFormScreenState extends State<SubjectiveFormScreen> {
                     ),
                   ),
                   onChanged: (value) {
-                    // Handle text change
+                    context.read<SubjectiveBloc>().add(DescChanged(value));
                   },
                 ),
               ],
