@@ -118,23 +118,36 @@ class SimpleCardItem extends StatelessWidget {
 
     return InkWell(
       onTap: onTap,
-      child: ListTile(
-        leading: leadingWidget,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
-        tileColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: Colors.black12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Background color of the card
+          borderRadius: BorderRadius.circular(8), // Border radius for rounded corners
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26, // Shadow color
+              offset: Offset(0, 3), // Shadow position (x, y)
+              blurRadius: 4, // Spread of the shadow
+            ),
+          ],
         ),
-        title: Padding(
-          padding: const EdgeInsets.only(bottom: 5),
-          child: Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        child: ListTile(
+          leading: leadingWidget,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+          tileColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: BorderSide(color: Colors.black12),
           ),
+          title: Padding(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+          ),
+          subtitle: subtitleWidget, 
+          trailing: trailing,
         ),
-        subtitle: subtitleWidget, 
-        trailing: trailing,
       ),
     );
   }

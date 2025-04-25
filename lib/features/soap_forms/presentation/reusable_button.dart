@@ -19,83 +19,92 @@ class ReusableButton extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SimpleCardItem(
-              title: 'John Doe',
-              description: 'Patient Details',
-              avatar: '', // Or a valid image URL
-              sex: 'male', // Or 'female'
-              onTap: () {
-                print('Card tapped!');
-              },
-            ),
-            SimpleCardItem(
-              title: 'John Doe',
-              description: 'Patient Details',
-              avatar: '', // Or a valid image URL
-              sex: 'female', // Or 'female'
-              onTap: () {
-                print('Card tapped!');
-              },
-            ),
-            SimpleCardItem(
-              title: 'John Doe',
-              description: 'Patient Details',
-              onTap: () {
-                print('Card tapped!');
-              },
-              trailing: Icon(Icons.chevron_right),
-            ),
-            SimpleCardItem(
-              title: 'John Doe',
-              description: 'Patient InfoNurse Details dfkhsfkhdsjfhjdshfjdshfjhdsjfhdsjhfjdshfjhsdjfhdsjfhjdshfjsdhjfhdsjfhdsjfhjdshfjdshfjhdsjfhdjshfjdshfjhdsjfhdsj',
-              avatar: '',
-              sex: 'male',
-              trailing: Icon(Icons.chevron_right),
-              onTap: () {},
-            ),
-            SimpleCardItem(
-              title: 'Jane Smith',
-              description: 'Nurse Details dfkhsfkhdsjfhjdshfjdshfjhdsjfhdsjhfjdshfjhsdjfhdsjfhjdshfjsdhjfhdsjfhdsjfhjdshfjdshfjhdsjfhdjshfjdshfjhdsjfhdsj',
-              avatar: '',
-              sex: 'female',
-              trailing: null, // or just omit this field
-              onTap: () {},
-            ),
-            SimpleCardItem(
-              title: 'Jane Smith',
-              avatar: '', // Empty avatar
-              sex: 'female',
-              status: 'On-hold', // Will show a status badge
-              trailing: null, // Optional, can be omitted or set to any widget
-              onTap: () {
-                // Handle the onTap action here
-              },
-            ),
-            SimpleCardItem(
-              title: 'Jane Smith',
-              avatar: '', // Empty avatar
-              sex: 'female',
-              status: 'In-progress', // Will show a status badge
-              trailing: null, // Optional, can be omitted or set to any widget
-              onTap: () {
-                // Handle the onTap action here
-              },
-            ),
-            SimpleCardItem(
-              title: 'Jane Smith',
-              avatar: '', // Empty avatar
-              sex: 'female',
-              status: 'Booked', // Will show a status badge
-              trailing: null, // Optional, can be omitted or set to any widget
-              onTap: () {
-                // Handle the onTap action here
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SimpleCardItem(
+                title: 'John Doe',
+                description: 'Patient Details',
+                avatar: '', // Or a valid image URL
+                sex: 'male', // Or 'female'
+                onTap: () {
+                  print('Card tapped!');
+                },
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'John Doe',
+                description: 'Patient Details',
+                avatar: '', // Or a valid image URL
+                sex: 'female', // Or 'female'
+                onTap: () {
+                  print('Card tapped!');
+                },
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'John Doe',
+                description: 'Patient Details',
+                onTap: () {
+                  print('Card tapped!');
+                },
+                trailing: Icon(Icons.chevron_right),
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'John Doe',
+                description: 'Patient InfoNurse Details dfkhsfkhdsjfhjdshfjdshfjhdsjfhdsjhfjdshfjhsdjfhdsjfhjdshfjsdhjfhdsjfhdsjfhjdshfjdshfjhdsjfhdjshfjdshfjhdsjfhdsj',
+                avatar: '',
+                sex: 'male',
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'Jane Smith',
+                description: 'Nurse Details dfkhsfkhdsjfhjdshfjdshfjhdsjfhdsjhfjdshfjhsdjfhdsjfhjdshfjsdhjfhdsjfhdsjfhjdshfjdshfjhdsjfhdjshfjdshfjhdsjfhdsj',
+                avatar: '',
+                sex: 'female',
+                trailing: null, // or just omit this field
+                onTap: () {},
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'Jane Smith',
+                avatar: '', // Empty avatar
+                sex: 'female',
+                status: 'On-hold', // Will show a status badge
+                trailing: null, // Optional, can be omitted or set to any widget
+                onTap: () {
+                  // Handle the onTap action here
+                },
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'Jane Smith',
+                avatar: '', // Empty avatar
+                sex: 'female',
+                status: 'In-progress', // Will show a status badge
+                trailing: null, // Optional, can be omitted or set to any widget
+                onTap: () {
+                  // Handle the onTap action here
+                },
+              ),
+              SizedBox(height: 20),
+              SimpleCardItem(
+                title: 'Jane Smith',
+                avatar: '', // Empty avatar
+                sex: 'female',
+                status: 'Booked', // Will show a status badge
+                trailing: null, // Optional, can be omitted or set to any widget
+                onTap: () {
+                  // Handle the onTap action here
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
